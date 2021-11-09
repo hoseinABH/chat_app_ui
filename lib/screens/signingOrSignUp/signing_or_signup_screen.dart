@@ -1,4 +1,5 @@
 import 'package:chat_app_ui/components/primary_button.dart';
+import 'package:chat_app_ui/constants.dart';
 import 'package:flutter/material.dart';
 
 class SigninOrSignUpScreen extends StatelessWidget {
@@ -8,14 +9,33 @@ class SigninOrSignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        children: [
-          Image.asset(
-            'assets/images/Logo_light.png',
-            height: 146,
-          ),
-          PrimaryButton(text: "Sign In", press: () {})
-        ],
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: cDefaultPadding),
+        child: Column(
+          children: [
+            const Spacer(
+              flex: 2,
+            ),
+            Image.asset(
+              MediaQuery.of(context).platformBrightness == Brightness.light
+                  ? 'assets/images/Logo_light.png'
+                  : 'assets/images/Logo_dark.png',
+              height: 146,
+            ),
+            const Spacer(),
+            PrimaryButton(text: "Sign In", press: () {}),
+            const SizedBox(
+              height: cDefaultPadding,
+            ),
+            PrimaryButton(
+                color: Theme.of(context).colorScheme.secondary,
+                text: "Sign Up",
+                press: () {}),
+            const Spacer(
+              flex: 2,
+            )
+          ],
+        ),
       )),
     );
   }
