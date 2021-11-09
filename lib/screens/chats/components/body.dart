@@ -2,6 +2,7 @@ import 'package:chat_app_ui/components/filled_outline_button.dart';
 import 'package:chat_app_ui/constants.dart';
 import 'package:chat_app_ui/models/Chat.dart';
 import 'package:chat_app_ui/screens/chats/components/chat_card.dart';
+import 'package:chat_app_ui/screens/messages/message_screen.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -35,7 +36,14 @@ class Body extends StatelessWidget {
                 itemBuilder: (ctx, index) {
                   return ChatCard(
                     chat: chatsData[index],
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MessageScreen(
+                                    chat: chatsData[index],
+                                  )));
+                    },
                   );
                 }))
       ],
