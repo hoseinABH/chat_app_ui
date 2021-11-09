@@ -10,7 +10,6 @@ class AutdioMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: cDefaultPadding),
       height: 40,
       width: MediaQuery.of(context).size.width * 0.55,
       padding: const EdgeInsets.symmetric(
@@ -34,13 +33,16 @@ class AutdioMessage extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   height: 2,
-                  color: cPrimaryColor.withOpacity(0.4),
+                  color: message.isSender
+                      ? Colors.white
+                      : cPrimaryColor.withOpacity(0.4),
                 ),
                 Container(
                   height: 8,
                   width: 8,
-                  decoration: const BoxDecoration(
-                      color: cPrimaryColor, shape: BoxShape.circle),
+                  decoration: BoxDecoration(
+                      color: message.isSender ? Colors.white : cPrimaryColor,
+                      shape: BoxShape.circle),
                 )
               ],
             ),
