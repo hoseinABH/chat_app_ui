@@ -33,7 +33,10 @@ class Body extends StatelessWidget {
             child: ListView.builder(
                 itemCount: chatsData.length,
                 itemBuilder: (ctx, index) {
-                  return ChatCard(chat: chatsData[index]);
+                  return ChatCard(
+                    chat: chatsData[index],
+                    press: () {},
+                  );
                 }))
       ],
     );

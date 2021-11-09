@@ -33,25 +33,24 @@ ThemeData darkThemeData(BuildContext context) {
   // Bydefault flutter provie us light and dark theme
   // we just modify it as our need
   return ThemeData.dark().copyWith(
-    primaryColor: cPrimaryColor,
-    scaffoldBackgroundColor: cContentColorLightTheme,
-    appBarTheme: appBarTheme,
-    iconTheme: const IconThemeData(color: cContentColorDarkTheme),
-    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-        .apply(bodyColor: cContentColorDarkTheme),
-    colorScheme: const ColorScheme.dark().copyWith(
-      primary: cPrimaryColor,
-      secondary: cSecondaryColor,
-      error: cErrorColor,
-    ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: cContentColorLightTheme,
-      selectedItemColor: Colors.white70,
-      unselectedItemColor: cContentColorDarkTheme.withOpacity(0.32),
-      selectedIconTheme: const IconThemeData(color: cPrimaryColor),
-      showUnselectedLabels: true,
-    ),
-  );
+      primaryColor: cPrimaryColor,
+      scaffoldBackgroundColor: cContentColorLightTheme,
+      appBarTheme: appBarTheme,
+      iconTheme: const IconThemeData(color: cContentColorDarkTheme),
+      textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+          .apply(bodyColor: cContentColorDarkTheme),
+      colorScheme: const ColorScheme.dark().copyWith(
+        primary: cPrimaryColor,
+        secondary: cSecondaryColor,
+        error: cErrorColor,
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: cContentColorLightTheme,
+        selectedItemColor: Colors.white70,
+        unselectedItemColor: cContentColorDarkTheme.withOpacity(0.32),
+        selectedIconTheme: const IconThemeData(color: cPrimaryColor),
+        showUnselectedLabels: true,
+      ));
 }
 
 const appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
